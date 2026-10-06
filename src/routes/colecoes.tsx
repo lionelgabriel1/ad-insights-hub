@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PlaceholderPage } from "@/components/placeholder-page";
+export const Route=createFileRoute("/colecoes")({head:()=>({meta:[{title:"Coleções — Ad Intelligence"},{name:"description",content:"Organize anúncios, ofertas e criativos salvos."},{property:"og:title",content:"Coleções — Ad Intelligence"},{property:"og:description",content:"Organize anúncios, ofertas e criativos salvos."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <PlaceholderPage title="Coleções" description="Organize anúncios, ofertas e criativos salvos."/>});

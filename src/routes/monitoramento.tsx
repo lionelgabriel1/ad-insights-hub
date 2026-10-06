@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PlaceholderPage } from "@/components/placeholder-page";
+export const Route=createFileRoute("/monitoramento")({head:()=>({meta:[{title:"Monitoramento — Ad Intelligence"},{name:"description",content:"Ofertas e pesquisas selecionadas para acompanhamento."},{property:"og:title",content:"Monitoramento — Ad Intelligence"},{property:"og:description",content:"Ofertas e pesquisas selecionadas para acompanhamento."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <PlaceholderPage title="Monitoramento" description="Ofertas e pesquisas selecionadas para acompanhamento."/>});

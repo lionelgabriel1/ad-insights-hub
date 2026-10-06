@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PlaceholderPage } from "@/components/placeholder-page";
+export const Route=createFileRoute("/dominios")({head:()=>({meta:[{title:"Domínios — Ad Intelligence"},{name:"description",content:"Domínios associados às landing pages observadas."},{property:"og:title",content:"Domínios — Ad Intelligence"},{property:"og:description",content:"Domínios associados às landing pages observadas."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <PlaceholderPage title="Domínios" description="Domínios associados às landing pages observadas."/>});

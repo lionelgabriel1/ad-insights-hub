@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PlaceholderPage } from "@/components/placeholder-page";
+export const Route=createFileRoute("/exportacoes")({head:()=>({meta:[{title:"Exportações — Ad Intelligence"},{name:"description",content:"Histórico e preparação de arquivos CSV."},{property:"og:title",content:"Exportações — Ad Intelligence"},{property:"og:description",content:"Histórico e preparação de arquivos CSV."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <PlaceholderPage title="Exportações" description="Histórico e preparação de arquivos CSV."/>});

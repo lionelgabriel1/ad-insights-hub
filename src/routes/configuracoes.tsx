@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PlaceholderPage } from "@/components/placeholder-page";
+export const Route=createFileRoute("/configuracoes")({head:()=>({meta:[{title:"Configurações — Ad Intelligence"},{name:"description",content:"Preferências visuais e do workspace."},{property:"og:title",content:"Configurações — Ad Intelligence"},{property:"og:description",content:"Preferências visuais e do workspace."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <PlaceholderPage title="Configurações" description="Preferências visuais e do workspace."/>});

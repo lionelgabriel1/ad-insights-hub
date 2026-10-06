@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PlaceholderPage } from "@/components/placeholder-page";
+export const Route=createFileRoute("/diagnostico-extensao")({head:()=>({meta:[{title:"Diagnóstico da extensão — Ad Intelligence"},{name:"description",content:"Saúde das sessões, processamento e sincronização da extensão."},{property:"og:title",content:"Diagnóstico da extensão — Ad Intelligence"},{property:"og:description",content:"Saúde das sessões, processamento e sincronização da extensão."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <PlaceholderPage title="Diagnóstico da extensão" description="Saúde das sessões, processamento e sincronização da extensão."/>});

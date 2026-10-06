@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep domain data behind typed modules in `src/data` and `src/types` so a future data provider can replace mocks without changing page components.
+- Keep dashboard routes visually guarded through `AuthGuard`; the adapter is intentionally permissive until real authentication is connected.

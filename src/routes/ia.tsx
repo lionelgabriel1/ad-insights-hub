@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PlaceholderPage } from "@/components/placeholder-page";
+export const Route=createFileRoute("/ia")({head:()=>({meta:[{title:"IA — Ad Intelligence"},{name:"description",content:"Painéis de análise baseados no conteúdo observado."},{property:"og:title",content:"IA — Ad Intelligence"},{property:"og:description",content:"Painéis de análise baseados no conteúdo observado."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <PlaceholderPage title="IA" description="Painéis de análise baseados no conteúdo observado."/>});

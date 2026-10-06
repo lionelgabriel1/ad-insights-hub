@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PlaceholderPage } from "@/components/placeholder-page";
+export const Route=createFileRoute("/anunciantes")({head:()=>({meta:[{title:"Anunciantes — Ad Intelligence"},{name:"description",content:"Visão consolidada de anunciantes e seus sinais observáveis."},{property:"og:title",content:"Anunciantes — Ad Intelligence"},{property:"og:description",content:"Visão consolidada de anunciantes e seus sinais observáveis."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <PlaceholderPage title="Anunciantes" description="Visão consolidada de anunciantes e seus sinais observáveis."/>});

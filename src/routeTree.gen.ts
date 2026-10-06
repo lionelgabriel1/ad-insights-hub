@@ -10,33 +10,269 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AlertasRouteImport } from './routes/alertas'
+import { Route as AnunciantesRouteImport } from './routes/anunciantes'
+import { Route as AnunciosRouteImport } from './routes/anuncios'
+import { Route as CadastroRouteImport } from './routes/cadastro'
+import { Route as ColecoesRouteImport } from './routes/colecoes'
+import { Route as ConfiguracoesRouteImport } from './routes/configuracoes'
+import { Route as CriativosRouteImport } from './routes/criativos'
+import { Route as DiagnosticoExtensaoRouteImport } from './routes/diagnostico-extensao'
+import { Route as DominiosRouteImport } from './routes/dominios'
+import { Route as ExportacoesRouteImport } from './routes/exportacoes'
+import { Route as IaRouteImport } from './routes/ia'
+import { Route as LandingPagesRouteImport } from './routes/landing-pages'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as MonitoramentoRouteImport } from './routes/monitoramento'
+import { Route as OfertasRouteImport } from './routes/ofertas'
+import { Route as PesquisasRouteImport } from './routes/pesquisas'
+import { Route as AnunciosAdIdRouteImport } from './routes/anuncios.$adId'
+import { Route as OfertasOfferIdRouteImport } from './routes/ofertas.$offerId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AlertasRoute = AlertasRouteImport.update({
+  id: '/alertas',
+  path: '/alertas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnunciantesRoute = AnunciantesRouteImport.update({
+  id: '/anunciantes',
+  path: '/anunciantes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnunciosRoute = AnunciosRouteImport.update({
+  id: '/anuncios',
+  path: '/anuncios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CadastroRoute = CadastroRouteImport.update({
+  id: '/cadastro',
+  path: '/cadastro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ColecoesRoute = ColecoesRouteImport.update({
+  id: '/colecoes',
+  path: '/colecoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfiguracoesRoute = ConfiguracoesRouteImport.update({
+  id: '/configuracoes',
+  path: '/configuracoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CriativosRoute = CriativosRouteImport.update({
+  id: '/criativos',
+  path: '/criativos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiagnosticoExtensaoRoute = DiagnosticoExtensaoRouteImport.update({
+  id: '/diagnostico-extensao',
+  path: '/diagnostico-extensao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DominiosRoute = DominiosRouteImport.update({
+  id: '/dominios',
+  path: '/dominios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExportacoesRoute = ExportacoesRouteImport.update({
+  id: '/exportacoes',
+  path: '/exportacoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IaRoute = IaRouteImport.update({
+  id: '/ia',
+  path: '/ia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LandingPagesRoute = LandingPagesRouteImport.update({
+  id: '/landing-pages',
+  path: '/landing-pages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MonitoramentoRoute = MonitoramentoRouteImport.update({
+  id: '/monitoramento',
+  path: '/monitoramento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfertasRoute = OfertasRouteImport.update({
+  id: '/ofertas',
+  path: '/ofertas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PesquisasRoute = PesquisasRouteImport.update({
+  id: '/pesquisas',
+  path: '/pesquisas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnunciosAdIdRoute = AnunciosAdIdRouteImport.update({
+  id: '/$adId',
+  path: '/$adId',
+  getParentRoute: () => AnunciosRoute,
+} as any)
+const OfertasOfferIdRoute = OfertasOfferIdRouteImport.update({
+  id: '/$offerId',
+  path: '/$offerId',
+  getParentRoute: () => OfertasRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/alertas': typeof AlertasRoute
+  '/anunciantes': typeof AnunciantesRoute
+  '/anuncios': typeof AnunciosRouteWithChildren
+  '/cadastro': typeof CadastroRoute
+  '/colecoes': typeof ColecoesRoute
+  '/configuracoes': typeof ConfiguracoesRoute
+  '/criativos': typeof CriativosRoute
+  '/diagnostico-extensao': typeof DiagnosticoExtensaoRoute
+  '/dominios': typeof DominiosRoute
+  '/exportacoes': typeof ExportacoesRoute
+  '/ia': typeof IaRoute
+  '/landing-pages': typeof LandingPagesRoute
+  '/login': typeof LoginRoute
+  '/monitoramento': typeof MonitoramentoRoute
+  '/ofertas': typeof OfertasRouteWithChildren
+  '/pesquisas': typeof PesquisasRoute
+  '/anuncios/$adId': typeof AnunciosAdIdRoute
+  '/ofertas/$offerId': typeof OfertasOfferIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/alertas': typeof AlertasRoute
+  '/anunciantes': typeof AnunciantesRoute
+  '/anuncios': typeof AnunciosRouteWithChildren
+  '/cadastro': typeof CadastroRoute
+  '/colecoes': typeof ColecoesRoute
+  '/configuracoes': typeof ConfiguracoesRoute
+  '/criativos': typeof CriativosRoute
+  '/diagnostico-extensao': typeof DiagnosticoExtensaoRoute
+  '/dominios': typeof DominiosRoute
+  '/exportacoes': typeof ExportacoesRoute
+  '/ia': typeof IaRoute
+  '/landing-pages': typeof LandingPagesRoute
+  '/login': typeof LoginRoute
+  '/monitoramento': typeof MonitoramentoRoute
+  '/ofertas': typeof OfertasRouteWithChildren
+  '/pesquisas': typeof PesquisasRoute
+  '/anuncios/$adId': typeof AnunciosAdIdRoute
+  '/ofertas/$offerId': typeof OfertasOfferIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/alertas': typeof AlertasRoute
+  '/anunciantes': typeof AnunciantesRoute
+  '/anuncios': typeof AnunciosRouteWithChildren
+  '/cadastro': typeof CadastroRoute
+  '/colecoes': typeof ColecoesRoute
+  '/configuracoes': typeof ConfiguracoesRoute
+  '/criativos': typeof CriativosRoute
+  '/diagnostico-extensao': typeof DiagnosticoExtensaoRoute
+  '/dominios': typeof DominiosRoute
+  '/exportacoes': typeof ExportacoesRoute
+  '/ia': typeof IaRoute
+  '/landing-pages': typeof LandingPagesRoute
+  '/login': typeof LoginRoute
+  '/monitoramento': typeof MonitoramentoRoute
+  '/ofertas': typeof OfertasRouteWithChildren
+  '/pesquisas': typeof PesquisasRoute
+  '/anuncios/$adId': typeof AnunciosAdIdRoute
+  '/ofertas/$offerId': typeof OfertasOfferIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/alertas'
+    | '/anunciantes'
+    | '/anuncios'
+    | '/cadastro'
+    | '/colecoes'
+    | '/configuracoes'
+    | '/criativos'
+    | '/diagnostico-extensao'
+    | '/dominios'
+    | '/exportacoes'
+    | '/ia'
+    | '/landing-pages'
+    | '/login'
+    | '/monitoramento'
+    | '/ofertas'
+    | '/pesquisas'
+    | '/anuncios/$adId'
+    | '/ofertas/$offerId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/alertas'
+    | '/anunciantes'
+    | '/anuncios'
+    | '/cadastro'
+    | '/colecoes'
+    | '/configuracoes'
+    | '/criativos'
+    | '/diagnostico-extensao'
+    | '/dominios'
+    | '/exportacoes'
+    | '/ia'
+    | '/landing-pages'
+    | '/login'
+    | '/monitoramento'
+    | '/ofertas'
+    | '/pesquisas'
+    | '/anuncios/$adId'
+    | '/ofertas/$offerId'
+  id:
+    | '__root__'
+    | '/'
+    | '/alertas'
+    | '/anunciantes'
+    | '/anuncios'
+    | '/cadastro'
+    | '/colecoes'
+    | '/configuracoes'
+    | '/criativos'
+    | '/diagnostico-extensao'
+    | '/dominios'
+    | '/exportacoes'
+    | '/ia'
+    | '/landing-pages'
+    | '/login'
+    | '/monitoramento'
+    | '/ofertas'
+    | '/pesquisas'
+    | '/anuncios/$adId'
+    | '/ofertas/$offerId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlertasRoute: typeof AlertasRoute
+  AnunciantesRoute: typeof AnunciantesRoute
+  AnunciosRoute: typeof AnunciosRouteWithChildren
+  CadastroRoute: typeof CadastroRoute
+  ColecoesRoute: typeof ColecoesRoute
+  ConfiguracoesRoute: typeof ConfiguracoesRoute
+  CriativosRoute: typeof CriativosRoute
+  DiagnosticoExtensaoRoute: typeof DiagnosticoExtensaoRoute
+  DominiosRoute: typeof DominiosRoute
+  ExportacoesRoute: typeof ExportacoesRoute
+  IaRoute: typeof IaRoute
+  LandingPagesRoute: typeof LandingPagesRoute
+  LoginRoute: typeof LoginRoute
+  MonitoramentoRoute: typeof MonitoramentoRoute
+  OfertasRoute: typeof OfertasRouteWithChildren
+  PesquisasRoute: typeof PesquisasRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +284,176 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/alertas': {
+      id: '/alertas'
+      path: '/alertas'
+      fullPath: '/alertas'
+      preLoaderRoute: typeof AlertasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/anunciantes': {
+      id: '/anunciantes'
+      path: '/anunciantes'
+      fullPath: '/anunciantes'
+      preLoaderRoute: typeof AnunciantesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/anuncios': {
+      id: '/anuncios'
+      path: '/anuncios'
+      fullPath: '/anuncios'
+      preLoaderRoute: typeof AnunciosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cadastro': {
+      id: '/cadastro'
+      path: '/cadastro'
+      fullPath: '/cadastro'
+      preLoaderRoute: typeof CadastroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/colecoes': {
+      id: '/colecoes'
+      path: '/colecoes'
+      fullPath: '/colecoes'
+      preLoaderRoute: typeof ColecoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/configuracoes': {
+      id: '/configuracoes'
+      path: '/configuracoes'
+      fullPath: '/configuracoes'
+      preLoaderRoute: typeof ConfiguracoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/criativos': {
+      id: '/criativos'
+      path: '/criativos'
+      fullPath: '/criativos'
+      preLoaderRoute: typeof CriativosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diagnostico-extensao': {
+      id: '/diagnostico-extensao'
+      path: '/diagnostico-extensao'
+      fullPath: '/diagnostico-extensao'
+      preLoaderRoute: typeof DiagnosticoExtensaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dominios': {
+      id: '/dominios'
+      path: '/dominios'
+      fullPath: '/dominios'
+      preLoaderRoute: typeof DominiosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/exportacoes': {
+      id: '/exportacoes'
+      path: '/exportacoes'
+      fullPath: '/exportacoes'
+      preLoaderRoute: typeof ExportacoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ia': {
+      id: '/ia'
+      path: '/ia'
+      fullPath: '/ia'
+      preLoaderRoute: typeof IaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/landing-pages': {
+      id: '/landing-pages'
+      path: '/landing-pages'
+      fullPath: '/landing-pages'
+      preLoaderRoute: typeof LandingPagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/monitoramento': {
+      id: '/monitoramento'
+      path: '/monitoramento'
+      fullPath: '/monitoramento'
+      preLoaderRoute: typeof MonitoramentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ofertas': {
+      id: '/ofertas'
+      path: '/ofertas'
+      fullPath: '/ofertas'
+      preLoaderRoute: typeof OfertasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pesquisas': {
+      id: '/pesquisas'
+      path: '/pesquisas'
+      fullPath: '/pesquisas'
+      preLoaderRoute: typeof PesquisasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/anuncios/$adId': {
+      id: '/anuncios/$adId'
+      path: '/$adId'
+      fullPath: '/anuncios/$adId'
+      preLoaderRoute: typeof AnunciosAdIdRouteImport
+      parentRoute: typeof AnunciosRoute
+    }
+    '/ofertas/$offerId': {
+      id: '/ofertas/$offerId'
+      path: '/$offerId'
+      fullPath: '/ofertas/$offerId'
+      preLoaderRoute: typeof OfertasOfferIdRouteImport
+      parentRoute: typeof OfertasRoute
+    }
   }
 }
 
+interface AnunciosRouteChildren {
+  AnunciosAdIdRoute: typeof AnunciosAdIdRoute
+}
+
+const AnunciosRouteChildren: AnunciosRouteChildren = {
+  AnunciosAdIdRoute: AnunciosAdIdRoute,
+}
+
+const AnunciosRouteWithChildren = AnunciosRoute._addFileChildren(
+  AnunciosRouteChildren,
+)
+
+interface OfertasRouteChildren {
+  OfertasOfferIdRoute: typeof OfertasOfferIdRoute
+}
+
+const OfertasRouteChildren: OfertasRouteChildren = {
+  OfertasOfferIdRoute: OfertasOfferIdRoute,
+}
+
+const OfertasRouteWithChildren =
+  OfertasRoute._addFileChildren(OfertasRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlertasRoute: AlertasRoute,
+  AnunciantesRoute: AnunciantesRoute,
+  AnunciosRoute: AnunciosRouteWithChildren,
+  CadastroRoute: CadastroRoute,
+  ColecoesRoute: ColecoesRoute,
+  ConfiguracoesRoute: ConfiguracoesRoute,
+  CriativosRoute: CriativosRoute,
+  DiagnosticoExtensaoRoute: DiagnosticoExtensaoRoute,
+  DominiosRoute: DominiosRoute,
+  ExportacoesRoute: ExportacoesRoute,
+  IaRoute: IaRoute,
+  LandingPagesRoute: LandingPagesRoute,
+  LoginRoute: LoginRoute,
+  MonitoramentoRoute: MonitoramentoRoute,
+  OfertasRoute: OfertasRouteWithChildren,
+  PesquisasRoute: PesquisasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

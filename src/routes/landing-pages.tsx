@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PlaceholderPage } from "@/components/placeholder-page";
+export const Route=createFileRoute("/landing-pages")({head:()=>({meta:[{title:"Landing Pages — Ad Intelligence"},{name:"description",content:"Páginas de destino e elementos públicos observados."},{property:"og:title",content:"Landing Pages — Ad Intelligence"},{property:"og:description",content:"Páginas de destino e elementos públicos observados."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <PlaceholderPage title="Landing Pages" description="Páginas de destino e elementos públicos observados."/>});
