@@ -11,7 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AnunciosRouteImport } from './routes/anuncios'
+import { Route as CadastroRouteImport } from './routes/cadastro'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as OfertasRouteImport } from './routes/ofertas'
+import { Route as PesquisasRouteImport } from './routes/pesquisas'
 import { Route as AnunciosAdIdRouteImport } from './routes/anuncios.$adId'
+import { Route as OfertasOfferIdRouteImport } from './routes/ofertas.$offerId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,39 +28,108 @@ const AnunciosRoute = AnunciosRouteImport.update({
   path: '/anuncios',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CadastroRoute = CadastroRouteImport.update({
+  id: '/cadastro',
+  path: '/cadastro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfertasRoute = OfertasRouteImport.update({
+  id: '/ofertas',
+  path: '/ofertas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PesquisasRoute = PesquisasRouteImport.update({
+  id: '/pesquisas',
+  path: '/pesquisas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AnunciosAdIdRoute = AnunciosAdIdRouteImport.update({
   id: '/$adId',
   path: '/$adId',
   getParentRoute: () => AnunciosRoute,
 } as any)
+const OfertasOfferIdRoute = OfertasOfferIdRouteImport.update({
+  id: '/$offerId',
+  path: '/$offerId',
+  getParentRoute: () => OfertasRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/anuncios': typeof AnunciosRouteWithChildren
+  '/cadastro': typeof CadastroRoute
+  '/login': typeof LoginRoute
+  '/ofertas': typeof OfertasRouteWithChildren
+  '/pesquisas': typeof PesquisasRoute
   '/anuncios/$adId': typeof AnunciosAdIdRoute
+  '/ofertas/$offerId': typeof OfertasOfferIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/anuncios': typeof AnunciosRouteWithChildren
+  '/cadastro': typeof CadastroRoute
+  '/login': typeof LoginRoute
+  '/ofertas': typeof OfertasRouteWithChildren
+  '/pesquisas': typeof PesquisasRoute
   '/anuncios/$adId': typeof AnunciosAdIdRoute
+  '/ofertas/$offerId': typeof OfertasOfferIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/anuncios': typeof AnunciosRouteWithChildren
+  '/cadastro': typeof CadastroRoute
+  '/login': typeof LoginRoute
+  '/ofertas': typeof OfertasRouteWithChildren
+  '/pesquisas': typeof PesquisasRoute
   '/anuncios/$adId': typeof AnunciosAdIdRoute
+  '/ofertas/$offerId': typeof OfertasOfferIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/anuncios' | '/anuncios/$adId'
+  fullPaths:
+    | '/'
+    | '/anuncios'
+    | '/cadastro'
+    | '/login'
+    | '/ofertas'
+    | '/pesquisas'
+    | '/anuncios/$adId'
+    | '/ofertas/$offerId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/anuncios' | '/anuncios/$adId'
-  id: '__root__' | '/' | '/anuncios' | '/anuncios/$adId'
+  to:
+    | '/'
+    | '/anuncios'
+    | '/cadastro'
+    | '/login'
+    | '/ofertas'
+    | '/pesquisas'
+    | '/anuncios/$adId'
+    | '/ofertas/$offerId'
+  id:
+    | '__root__'
+    | '/'
+    | '/anuncios'
+    | '/cadastro'
+    | '/login'
+    | '/ofertas'
+    | '/pesquisas'
+    | '/anuncios/$adId'
+    | '/ofertas/$offerId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AnunciosRoute: typeof AnunciosRouteWithChildren
+  CadastroRoute: typeof CadastroRoute
+  LoginRoute: typeof LoginRoute
+  OfertasRoute: typeof OfertasRouteWithChildren
+  PesquisasRoute: typeof PesquisasRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -74,12 +148,47 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AnunciosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cadastro': {
+      id: '/cadastro'
+      path: '/cadastro'
+      fullPath: '/cadastro'
+      preLoaderRoute: typeof CadastroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ofertas': {
+      id: '/ofertas'
+      path: '/ofertas'
+      fullPath: '/ofertas'
+      preLoaderRoute: typeof OfertasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pesquisas': {
+      id: '/pesquisas'
+      path: '/pesquisas'
+      fullPath: '/pesquisas'
+      preLoaderRoute: typeof PesquisasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/anuncios/$adId': {
       id: '/anuncios/$adId'
       path: '/$adId'
       fullPath: '/anuncios/$adId'
       preLoaderRoute: typeof AnunciosAdIdRouteImport
       parentRoute: typeof AnunciosRoute
+    }
+    '/ofertas/$offerId': {
+      id: '/ofertas/$offerId'
+      path: '/$offerId'
+      fullPath: '/ofertas/$offerId'
+      preLoaderRoute: typeof OfertasOfferIdRouteImport
+      parentRoute: typeof OfertasRoute
     }
   }
 }
@@ -96,9 +205,24 @@ const AnunciosRouteWithChildren = AnunciosRoute._addFileChildren(
   AnunciosRouteChildren,
 )
 
+interface OfertasRouteChildren {
+  OfertasOfferIdRoute: typeof OfertasOfferIdRoute
+}
+
+const OfertasRouteChildren: OfertasRouteChildren = {
+  OfertasOfferIdRoute: OfertasOfferIdRoute,
+}
+
+const OfertasRouteWithChildren =
+  OfertasRoute._addFileChildren(OfertasRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnunciosRoute: AnunciosRouteWithChildren,
+  CadastroRoute: CadastroRoute,
+  LoginRoute: LoginRoute,
+  OfertasRoute: OfertasRouteWithChildren,
+  PesquisasRoute: PesquisasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
