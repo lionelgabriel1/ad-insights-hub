@@ -1,3 +1,0 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { PlaceholderPage } from "@/components/placeholder-page";
-export const Route=createFileRoute("/criativos")({head:()=>({meta:[{title:"Criativos — Ad Intelligence"},{name:"description",content:"Biblioteca visual e análise estrutural dos criativos observados."},{property:"og:title",content:"Criativos — Ad Intelligence"},{property:"og:description",content:"Biblioteca visual e análise estrutural dos criativos observados."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <PlaceholderPage title="Criativos" description="Biblioteca visual e análise estrutural dos criativos observados."/>});
