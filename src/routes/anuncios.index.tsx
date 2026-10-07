@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ads } from "@/data/mock-data";
 
-export const Route = createFileRoute("/anuncios")({head:()=>({meta:[{title:"Anúncios — Ad Intelligence"},{name:"description",content:"Explore anúncios públicos coletados e seus sinais observáveis."},{property:"og:title",content:"Anúncios — Ad Intelligence"},{property:"og:description",content:"Explore anúncios públicos coletados e seus sinais observáveis."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:AdsPage});
+export const Route = createFileRoute("/anuncios/")({head:()=>({meta:[{title:"Anúncios — Ad Intelligence"},{name:"description",content:"Explore anúncios públicos coletados e seus sinais observáveis."},{property:"og:title",content:"Anúncios — Ad Intelligence"},{property:"og:description",content:"Explore anúncios públicos coletados e seus sinais observáveis."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:AdsPage});
 
 function AdsPage(){
  const [query,setQuery]=useState(""); const [status,setStatus]=useState("todos"); const [days,setDays]=useState("0"); const [sort,setSort]=useState("tempo"); const [page,setPage]=useState(1);
